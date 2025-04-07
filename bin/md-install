@@ -355,7 +355,7 @@ macosSdkPlatformPath=`getSdkProperty macosx PlatformPath`
 # specificationFile="/Applications/Xcode.app/Contents/Developer/Library/Xcode/Plug-ins/XCBSpecifications.ideplugin/Contents/Resources/Embedded-Device.xcspec"
 
 # for xcode16
-specificationFile=$(find /Applications/Xcode.app -name "Embedded-Device.xcspec | head -n 1")
+specificationFile=$(find /Applications/Xcode.app -name "Embedded-Device.xcspec"  | head -n 1)
 
 
 
@@ -369,8 +369,8 @@ hasProductTypeForCommandLineTool=`doesFileContain "$specificationFile" 'com.appl
 
 macosxSDKSpecificationsPath="$(cd $macosSdkPlatformPath/../../.. && pwd)/PlugIns/XCBSpecifications.ideplugin/Contents/Resources"
 # echo $macosxSDKSpecificationsPath
-packageTypesForMacOSXPath=$(find /Applications/Xcode.app -name "MacOSX Package Types.xcspec | head -n 1")
-productTypesForMacOSXPath=$(find /Applications/Xcode.app -name "MacOSX Product Types.xcspec | head -n 1")
+packageTypesForMacOSXPath=$(find /Applications/Xcode.app -name "MacOSX Package Types.xcspec"  | head -n 1)
+productTypesForMacOSXPath=$(find /Applications/Xcode.app -name "MacOSX Product Types.xcspec"  | head -n 1)
 
 
 
